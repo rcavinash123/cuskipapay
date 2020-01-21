@@ -21,7 +21,7 @@ spec:
       - name: cuskipapay-container
         image: rcavinash123/cuskipapay:1.0.0                    
         ports:
-          - containerPort: 49950
+          - containerPort: 80
             protocol: TCP
         resources:
           requests:
