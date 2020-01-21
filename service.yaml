@@ -9,7 +9,7 @@ spec:
   ports:
     - port: 49950
       targetPort: 49950
-      nodePort: 31294
+      nodePort: 31295
       name: http
   selector:
     app: cuskipapay
