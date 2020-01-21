@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cuskipapay
+spec:
+  replicas: 1
+  strategy:
+   type: RollingUpdate
+   rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 24%
+  selector:
+    matchLabels:
+      app: cuskipapay
+  template:
+    metadata:
+      labels:
+        app: cuskipapay
+    spec:
+      containers:
+      - name: cuskipapay-container
+        image: rcavinash123/cuskipapay:1.0.0                    
+        ports:
+          - containerPort: 49950
+            protocol: TCP
+        resources:
+          requests:
+            memory: 512Mi
+          limits:
+            memory: 1Gi
+      nodeSelector:
+        nodeweb: nodeweb
+          
